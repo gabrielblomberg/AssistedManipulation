@@ -5,6 +5,7 @@
 #include <pinocchio/multibody/model.hpp>
 #include <pinocchio/multibody/data.hpp>
 #include <pinocchio/algorithm/frames.hpp>
+#include <pinocchio/multibody/geometry.hpp>
 
 #include "controller/energy.hpp"
 #include "controller/json.hpp"
@@ -132,7 +133,7 @@ public:
     /**
      * @brief Get the current joint position.
      */
-    inline const VectorXd &get_joint_position() const override
+    inline Eigen::Ref<const VectorXd> get_joint_position() const override
     {
         return m_joint_position;
     }
@@ -140,7 +141,7 @@ public:
     /**
      * @brief Get the current joint velocity.
      */
-    const VectorXd &get_joint_velocity() const override
+    inline Eigen::Ref<const VectorXd> get_joint_velocity() const override
     {
         return m_joint_velocity;
     }

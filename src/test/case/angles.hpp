@@ -16,8 +16,6 @@ public:
 
 private:
 
-    AngleTest() = default;
-
     inline bool run() override
     {
         Vector3d x = Vector3d(0, 0, M_PI/8);
@@ -27,5 +25,4 @@ private:
         
         return true;
     }
-
 };

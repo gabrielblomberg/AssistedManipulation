@@ -249,9 +249,9 @@ void FrankaRidgebackDynamicsForecast::log(
 
     double time_step = forecast_dynamics.get_time_step();
     auto &trajectory = forecast_dynamics.get_end_effector_trajectory();
-    auto &wrench = forecast_dynamics.get_wrench_trajectory();
+    // auto &wrench = forecast_dynamics.get_wrench_trajectory();
 
-    for (std::int64_t i = 0; i < trajectory.size(); i++) {
+    for (std::size_t i = 0; i < trajectory.size(); i++) {
         auto &state = trajectory[i];
         double t = time + i * time_step;
 

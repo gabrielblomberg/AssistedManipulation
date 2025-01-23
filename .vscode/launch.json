@@ -28,6 +28,7 @@
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
             "MIMode": "gdb",
+            "miDebuggerPath": "/usr/bin/gdb",
             "preLaunchTask": "Prepare for Debug",
             "postDebugTask": "Stop Visualiser",
             "setupCommands": [

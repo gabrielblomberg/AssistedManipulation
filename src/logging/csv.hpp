@@ -75,7 +75,7 @@ public:
         // Output the csv header.
         if (!configuration.header.empty()) {
             *file << configuration.header[0];
-            for (int i = 1; i < configuration.header.size(); i++)
+            for (std::size_t i = 1; i < configuration.header.size(); i++)
                 *file << ", " << configuration.header[i];
             *file << '\n';
         }

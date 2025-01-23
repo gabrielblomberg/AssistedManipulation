@@ -32,6 +32,6 @@ inline Quaterniond euler_to_quaternion(const Vector3d &euler)
     );
 }
 
-inline Vector3d euler_difference(const Vector3d &first, const Vector3d &second)
-{
-}
+// inline Vector3d euler_difference(const Vector3d &first, const Vector3d &second)
+// {
+// }

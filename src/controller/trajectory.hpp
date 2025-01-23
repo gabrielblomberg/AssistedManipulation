@@ -380,7 +380,7 @@ public:
      */
     inline Vector3d get_position(double time) override;
 
-private:
+protected:
 
     /**
      * @brief Initialise a new lissajous trajectory.

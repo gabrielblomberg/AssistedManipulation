@@ -28,6 +28,7 @@ std::unique_ptr<BaseTest> BaseTest::create(Options &options)
 
 std::unique_ptr<BaseTest> BaseTest::create(const Configuration &configuration)
 {
+    std::cout << "here1" << std::endl;
     std::unique_ptr<Simulator> simulator = Simulator::create(configuration.simulator);
     if (!simulator) {
         std::cerr << "failed to create simulator" << std::endl;

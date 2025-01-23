@@ -1,5 +1,3 @@
-#pragma once
-
 #include "simulation/frankaridgeback/dynamics.hpp"
 
 namespace FrankaRidgeback {

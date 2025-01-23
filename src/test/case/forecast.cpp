@@ -115,8 +115,8 @@ bool ForecastTest::test_kalman_linear_forecast()
     if (!logger)
         return false;
 
-    auto transition_variance = Vector4d(0.1, 0.1, 0.1, 0.1);
-    auto observation_variance = Vector4d(0.1, 0.1, 0.1, 0.1);
+    // auto transition_variance = Vector4d(0.1, 0.1, 0.1, 0.1);
+    // auto observation_variance = Vector4d(0.1, 0.1, 0.1, 0.1);
 
     KalmanForecast::Configuration configuration {
         .observed_states = 2,

@@ -1,6 +1,7 @@
 #pragma once
 
 #include <variant>
+#include <mutex>
 #include <shared_mutex>
 #include <deque>
 
@@ -180,7 +181,7 @@ public:
      * @param measurement The observed measurement.
      * @param time The time of the observation.
      */
-    inline void update(VectorXd measurement, double time) override;
+    void update(VectorXd measurement, double time) override;
 
     /**
      * @brief Predict the state as the last observed measurement, regardless of
@@ -189,7 +190,7 @@ public:
      * @param time The time of the forecasted state, unused.
      * @returns The average observation.
      */
-    inline VectorXd forecast(double /* time */) override;
+    VectorXd forecast(double /* time */) override;
 
 private:
 
@@ -309,12 +310,12 @@ public:
      * @param measurement The observed measurement.
      * @param time The time of the observation.
      */
-    inline void update(VectorXd measurement, double time) override;
+    void update(VectorXd measurement, double time) override;
 
     /**
      * @brief Update without an observation.
      */
-    inline void update(double time) override;
+    void update(double time) override;
 
     /**
      * @brief Predict the force as the last observed force, regardless of

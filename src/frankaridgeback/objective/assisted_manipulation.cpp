@@ -41,7 +41,7 @@ double AssistedManipulation::get_cost(
     double time
 ) {
     const State &state = s;
-    const Control &control = c;
+    // const Control &control = c;
 
     auto dynamics = static_cast<Dynamics*>(d);
 
@@ -124,7 +124,7 @@ double AssistedManipulation::self_collision_cost(Dynamics *dynamics)
         }}
     }};
 
-    const auto &self_collision = m_configuration.self_collision_limit;
+    // const auto &self_collision = m_configuration.self_collision_limit;
     double cost = 0.0;
 
     for (std::size_t i = 0; i < CHECK_COLLSION.size(); i++) {

@@ -428,12 +428,12 @@ public:
     /**
      * @brief Get the current joint position.
      */
-    virtual const VectorXd &get_joint_position() const = 0;
+    virtual Eigen::Ref<const VectorXd> get_joint_position() const = 0;
 
     /**
      * @brief Get the current joint velocity.
      */
-    virtual const VectorXd &get_joint_velocity() const = 0;
+    virtual Eigen::Ref<const VectorXd> get_joint_velocity() const = 0;
 
     /**
      * @brief Get the position of a frame.

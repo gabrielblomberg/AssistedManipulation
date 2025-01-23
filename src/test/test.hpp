@@ -185,9 +185,9 @@ public:
         });
 
         // Time the duration of the test.
-        auto start = steady_clock::now();
+        // auto start = steady_clock::now();
         bool success = test->run();
-        auto stop = steady_clock::now();
+        // auto stop = steady_clock::now();
 
         // Join the dot display thread.
         promise.set_value();
@@ -198,12 +198,11 @@ public:
         else
             std::cout << " failed";
 
-        auto duration = duration_cast<microseconds>(stop - start);
-        auto min = duration_cast<minutes>(duration);
-        auto sec = duration_cast<seconds>(duration - min);
-        auto ms = duration_cast<milliseconds>(duration - min - sec);
-
-        std::cout << " (" << min << " " << sec << " " << ms << ")" << std::endl;
+        // auto duration = duration_cast<microseconds>(stop - start);
+        // auto min = duration_cast<minutes>(duration);
+        // auto sec = duration_cast<seconds>(duration - min);
+        // auto ms = duration_cast<milliseconds>(duration - min - sec);
+        // std::cout << " (" << min << " " << sec << " " << ms << ")" << std::endl;
 
         return success;
     }
@@ -227,6 +226,12 @@ private:
 template<typename Derived>
 class RegisteredTest : public Test
 {
+protected:
+
+    RegisteredTest() {
+        (void)registered;
+    }
+
 private:
 
     /**

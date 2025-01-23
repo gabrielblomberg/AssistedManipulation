@@ -53,6 +53,8 @@ public:
         default_patch.merge_patch(options.patch);
         options.patch = default_patch;
 
+        (void)CircleTest();
+
         return ExternalWrenchTest::create(options);
     }
 
@@ -65,7 +67,4 @@ private:
     {
         return false;
     }
-
-    /// Disable construction.
-    CircleTest() = default;
 };

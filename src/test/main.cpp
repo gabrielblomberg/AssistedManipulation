@@ -101,7 +101,7 @@ parse(int argc, char **argv)
 
 int main(int argc, char **argv)
 {
-    char *program = argv[0];
+    // char *program = argv[0];
 
     // Prints usage diagnostics for command line errors.
     auto usage = [argc, argv](std::string reason) /* [[noreturn]] */ {

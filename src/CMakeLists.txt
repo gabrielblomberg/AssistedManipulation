@@ -17,7 +17,7 @@ find_package(pinocchio REQUIRED)
 find_package(raisim CONFIG REQUIRED)
 find_package(nlohmann_json REQUIRED)
 
-include_directories(${EIGEN3_INCLUDE_DIRS} ${yaml_cpp_INCLUDE_DIRS} ${pinnocchio_INCLUDE_DIRS})
+include_directories(${EIGEN3_INCLUDE_DIRS} ${pinnocchio_INCLUDE_DIRS})
 
 add_executable(
     test
@@ -66,12 +66,11 @@ if (UNIX)
 
     target_link_libraries(
         test PUBLIC 
-        raisim::raisim
         pinocchio::pinocchio
+        raisim::raisim
         # osqp::osqp
         nlohmann_json::nlohmann_json
         pthread
-        -static
     )
 elseif (WIN32)
     target_compile_options(test PUBLIC /W3) # /Wall WX
@@ -84,7 +83,6 @@ elseif (WIN32)
         nlohmann_json::nlohmann_json
         Ws2_32
     )
-
     install(FILES $<TARGET_RUNTIME_DLLS:test> DESTINATION bin)
 endif()
 

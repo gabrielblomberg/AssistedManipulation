@@ -16,7 +16,7 @@ RUN groupadd --gid $USER_GID $USERNAME \
     && chmod 0440 /etc/sudoers.d/$USERNAME
 RUN apt-get update && apt-get upgrade -y
 RUN apt-get install -y python3-pip
-ENV SHELL /bin/bash
+ENV SHELL=/bin/bash
 
 # Install packages
 RUN apt install -qqy \
@@ -26,10 +26,11 @@ RUN apt install -qqy \
     x11-apps \
     libeigen3-dev \
     nlohmann-json3-dev \
-    ros-iron-pinocchio
+    ros-iron-pinocchio \
+    gdb
 
-RUN echo 'export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/root/assistedmanipulation/lib/raisim/linux/lib' >> ~/.bashrc && \
-    echo 'PYTHONPATH=$PYTHONPATH:/root/assistedmanipulation/lib/raisim/linux/lib' >> ~/.bashrc && \
+RUN echo 'export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/root/assistedmanipulation/lib/raisimlib/raisim/linux/lib' >> ~/.bashrc && \
+    echo 'PYTHONPATH=$PYTHONPATH:/root/assistedmanipulation/lib/raisimlib/raisim/linux/lib' >> ~/.bashrc && \
     echo 'source "/opt/ros/$ROS_DISTRO/setup.bash" --' >> ~/.bashrc
 
 CMD ["/bin/bash"]

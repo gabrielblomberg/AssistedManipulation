@@ -115,7 +115,7 @@ double TrackPoint::self_collision_cost(Dynamics *dynamics)
         }}
     }};
 
-    const auto &self_collision = m_configuration.self_collision_limit;
+    // const auto &self_collision = m_configuration.self_collision_limit;
     double cost = 0.0;
 
     for (std::size_t i = 0; i < CHECK_COLLSION.size(); i++) {
@@ -157,7 +157,7 @@ double TrackPoint::reach_cost(Dynamics *dynamics)
 
     // Unit vector in the forward direction of the robot, normal to the
     // infront / behind plane.
-    Vector3d forward = rotate_forward * Vector3d::UnitX();
+    // Vector3d forward = rotate_forward * Vector3d::UnitX();
 
     // Position of the plane in front of the robot.
     Vector3d robot = (

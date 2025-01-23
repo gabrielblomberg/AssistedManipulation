@@ -24,9 +24,9 @@
         // "--device=/dev/dxg",
 	],
 	"mounts": [
-		"source=/tmp/.X11-unix,target=/tmp/.X11-unix,type=bind,consistency=cached",
-		"source=/dev/dri,target=/dev/dri,type=bind,consistency=cached",
-		"source=/mnt/wslg,target=/mnt/wslg,type=bind,consistency=cached"
+		// "source=/tmp/.X11-unix,target=/tmp/.X11-unix,type=bind,consistency=cached",
+		// "source=/dev/dri,target=/dev/dri,type=bind,consistency=cached",
+		// "source=/mnt/wslg,target=/mnt/wslg,type=bind,consistency=cached"
 	],
 	"containerEnv": {
 		"DISPLAY": "${env:DISPLAY}",
